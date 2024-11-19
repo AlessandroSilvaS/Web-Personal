@@ -1,4 +1,13 @@
-.box-of-chat{
-    width: 80%;
-    
+
+.boxChat{
+    width: 50%;
+    height: 90vh;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: blue;
+    padding: 30px;
+}
+.boxChat .teste{
+    text-align: left;
+    margin-left: 0;
 }

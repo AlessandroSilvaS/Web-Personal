@@ -1,4 +1,5 @@
 import '../style/index.css'
+import { Chat } from './Chat.jsx'
 import { Search } from '../components/Search.jsx'
 import { Chat } from './Chat.jsx'
 
