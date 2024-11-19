@@ -4,7 +4,7 @@ const CardChat = ({textOfCard, typeCard}) => {
     const JustifyCard = typeCard === "question" ? "rigth" : "left"
 
     const cardStyle = {
-        backgroundColor: '#B4B4B4',
+        backgroundColor: 'rgb(238, 238, 238)',
         padding: '15px',
         fontSize: '18px',
         borderRadius: '15px',

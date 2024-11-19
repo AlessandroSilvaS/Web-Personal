@@ -1,7 +1,6 @@
 import '../style/index.css'
 import { Chat } from './Chat.jsx'
 import { Search } from '../components/Search.jsx'
-import { Chat } from './Chat.jsx'
 
 const welcomeTexts = ["Pronto para cuidar da saude?", "Seja bem vindo a uma vida nova!", "Como posso ajudar seu bem-estar hoje?", "Pronto para melhorar sua vida?", "teste teste"]
 
