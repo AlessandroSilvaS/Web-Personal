@@ -1,4 +1,3 @@
-
 .box-of-chat{
     width: 50%;
     height: 90vh;
@@ -7,17 +6,9 @@
     background-color: blue;
     padding: 30px;
     display: flex;
-}
-.box-of-chat .box-of-chat-response{
-    width: 50%;
-    display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
 }
-.box-of-chat .box-of-chat-question{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    background-color: red;
+.box-of-chat .question{
+    align-self: flex-end;
 }

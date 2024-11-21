@@ -5,12 +5,8 @@ export function Chat(){
     return(
         <>
             <div className="box-of-chat">
-                <div className="box-of-chat-response">
-                    <CardChat textOfCard={"Isso é uma resposta"}/>
-                </div>
-                <div className="box-of-chat-question">
-                <CardChat textOfCard={"Isso é uma pergunta"}/>
-                </div>
+                <CardChat textOfCard={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro neque placeat ex? Eligendi iusto modi, dolores ab at totam, sapiente suscipit commodi ipsam et optio. Id perspiciatis quasi quibusdam labore?"}/>
+                <CardChat textOfCard={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro neque placeat ex? Eligendi iusto modi, dolores ab at totam, sapiente suscipit commodi ipsam et optio. Id perspiciatis quasi quibusdam labore?"} className='question'/>
             </div>
             <Search placeholder={"Posso ajuda-lo com algo mais?"}/>
         </>

@@ -1,7 +1,5 @@
 import "../style/cards.css"
-const CardChat = ({textOfCard, typeCard}) => {
-
-    const JustifyCard = typeCard === "question" ? "rigth" : "left"
+const CardChat = ({textOfCard}) => {
 
     const cardStyle = {
         backgroundColor: 'rgb(238, 238, 238)',
@@ -10,8 +8,8 @@ const CardChat = ({textOfCard, typeCard}) => {
         borderRadius: '15px',
         maxWidth: '500px',
         minWidth: '100px',
-        minHeigth: '15px',
-        textAling: {JustifyCard}
+        minHeight: '15px',
+        marginBottom: "20px"
     }
 
     return(
