@@ -1,13 +1,23 @@
 
-.boxChat{
+.box-of-chat{
     width: 50%;
     height: 90vh;
     margin: 0 auto;
     margin-top: 20px;
     background-color: blue;
     padding: 30px;
+    display: flex;
 }
-.boxChat .teste{
-    text-align: left;
-    margin-left: 0;
+.box-of-chat .box-of-chat-response{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.box-of-chat .box-of-chat-question{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    background-color: red;
 }
