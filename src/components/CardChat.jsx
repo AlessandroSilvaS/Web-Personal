@@ -1,5 +1,5 @@
-import "../style/cards.css"
-const CardChat = ({textOfCard}) => {
+
+const CardChat = ({textOfCard, typeCard}) => {
 
     const cardStyle = {
         backgroundColor: 'rgb(238, 238, 238)',
@@ -9,7 +9,8 @@ const CardChat = ({textOfCard}) => {
         maxWidth: '500px',
         minWidth: '100px',
         minHeight: '15px',
-        marginBottom: "20px"
+        marginBottom: "20px",
+        alignSelf: typeCard === "question" ? 'flex-end' : 'flex-start'
     }
 
     return(

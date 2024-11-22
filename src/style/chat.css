@@ -3,12 +3,14 @@
     height: 90vh;
     margin: 0 auto;
     margin-top: 20px;
-    background-color: blue;
     padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    overflow-y: scroll;
 }
-.box-of-chat .question{
-    align-self: flex-end;
+.box-of-chat .teste{
+    text-align: right;
+    color: yellow;
+    font-size: 30px;
 }

@@ -42,7 +42,7 @@ body {
       width: 0;
   }
   to{
-      width: 45%;
+      width: 435px;
   }
 }
 @media(max-width: 880px){
