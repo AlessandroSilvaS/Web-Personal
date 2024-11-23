@@ -9,7 +9,7 @@ function Index() {
 
   const hideDisplayInitialChat = () => {
     setDisplayOfChat('block')
-    return displayOfInitialChat.current.style.display = 'none'
+    displayOfInitialChat.current.style.display = 'none'
   }
 
   return (
