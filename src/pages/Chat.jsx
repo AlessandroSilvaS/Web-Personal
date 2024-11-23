@@ -1,15 +1,19 @@
-import CardChat from "../components/CardChat"
+import { useRef, useState } from "react";
+//import CardChat from "../components/CardChat"
 import { Search } from "../components/Search"
 import "../style/chat.css"
-export function Chat(){
-    //? lógica de funcionamento do chat
+export function Chat({displayOfChat}){
 
-    
-    console.log(Search)
+    const inputUserRef = useRef(null)
+
+    const handleButtonClick = () => {
+        console.log(inputUserRef.current.value)
+    }
+
     return(
-        <>
+        <div style={{display: displayOfChat}}>
             <div className="box-of-chat"></div>
-            <Search placeholder={"Posso ajuda-lo com algo mais?"} />
-        </>
+            <Search placeholder={'Posso ajudar em algo mais?...'} reference={inputUserRef} functionOfButton={handleButtonClick}/>
+        </div>
     )
 }
