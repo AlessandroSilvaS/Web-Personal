@@ -5,11 +5,13 @@ import { useRef, useState } from 'react'
 
 function Index() {
   const displayOfInitialChat = useRef(null)
+  const inputUserRef = useRef(null)
   const [displayOfChat, setDisplayOfChat] = useState('none')
 
   const hideDisplayInitialChat = () => {
     setDisplayOfChat('block')
     displayOfInitialChat.current.style.display = 'none'
+    console.log(inputUserRef.current.value)
   }
 
   return (
@@ -19,11 +21,10 @@ function Index() {
             <img className='fotoAvatar' src='src/images/avatarRD.jpeg' alt='Not found'/>
             <h1 className='welcome-text'>Pronto para cuidar da saúde?</h1>
           </div> 
-          <Search placeholder={"O que gostaria de treinar?"} functionOfButton={hideDisplayInitialChat}/>
+          <Search reference={inputUserRef} placeholder={"O que gostaria de treinar?"} functionOfButton={hideDisplayInitialChat}/>
         </div>
-      <Chat displayOfChat={displayOfChat}/>
+      <Chat displayOfChat={displayOfChat}  key={'one'}/>
     </div>
   )
 }
-
 export default Index

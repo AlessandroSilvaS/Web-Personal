@@ -1,8 +1,6 @@
-import { useRef, useState } from "react";
 import "../style/search.css"
 import { FaArrowUp } from "react-icons/fa";
 export function Search({placeholder, reference, functionOfButton}){
-
 
     return(
         <div className="search-main">
