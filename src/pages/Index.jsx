@@ -7,11 +7,12 @@ function Index() {
   const displayOfInitialChat = useRef(null)
   const inputUserRef = useRef(null)
   const [displayOfChat, setDisplayOfChat] = useState('none')
+  const [initialMensageUser, setInitialMensageUser] = useState('')
 
-  const hideDisplayInitialChat = () => {
+  function hideDisplayInitialChat(){
     setDisplayOfChat('block')
     displayOfInitialChat.current.style.display = 'none'
-    console.log(inputUserRef.current.value)
+    setInitialMensageUser(inputUserRef.current.value)
   }
 
   return (
@@ -23,8 +24,9 @@ function Index() {
           </div> 
           <Search reference={inputUserRef} placeholder={"O que gostaria de treinar?"} functionOfButton={hideDisplayInitialChat}/>
         </div>
-      <Chat displayOfChat={displayOfChat}  key={'one'}/>
+      <Chat displayOfChat={displayOfChat} textOfFirstQuestion={initialMensageUser}/>
     </div>
   )
 }
+
 export default Index
