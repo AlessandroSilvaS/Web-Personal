@@ -4,8 +4,6 @@ import { Search } from "../components/Search"
 import "../style/chat.css"
 export function Chat({displayOfChat, textOfFirstQuestion}){
     const inputUserRef = useRef(null)
-    const [message, setMessage] = useState('')
-
     const handleButtonClick = (text) => {
         <CardChat textOfCard={text} typeCard={'question'}/>
     }
