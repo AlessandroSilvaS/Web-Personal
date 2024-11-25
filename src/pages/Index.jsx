@@ -5,14 +5,22 @@ import { useRef, useState } from 'react'
 
 function Index() {
   const displayOfInitialChat = useRef(null)
-  const inputUserRef = useRef(null)
+  const inputUser = useRef(null)
   const [displayOfChat, setDisplayOfChat] = useState('none')
-  const [initialMensageUser, setInitialMensageUser] = useState('')
+  const [inputMesage, setInputMessage] = useState('')
 
   function hideDisplayInitialChat(){
-    setDisplayOfChat('block')
-    displayOfInitialChat.current.style.display = 'none'
-    setInitialMensageUser(inputUserRef.current.value)
+
+    const valueInput = inputUser.current.value
+
+    if(valueInput !== null){
+      displayOfInitialChat.current.style.display = 'none'
+      setDisplayOfChat('block')
+      setInputMessage(valueInput)
+      
+    }else{
+      window.alert("Por favor, digite um prompt válido...")
+    }
   }
 
   return (
@@ -22,11 +30,10 @@ function Index() {
             <img className='fotoAvatar' src='src/images/avatarRD.jpeg' alt='Not found'/>
             <h1 className='welcome-text'>Pronto para cuidar da saúde?</h1>
           </div> 
-          <Search reference={inputUserRef} placeholder={"O que gostaria de treinar?"} functionOfButton={hideDisplayInitialChat}/>
+          <Search reference={inputUser} placeholder={"O que gostaria de treinar?"} functionOfButton={hideDisplayInitialChat}/>
         </div>
-      <Chat displayOfChat={displayOfChat} textOfFirstQuestion={initialMensageUser}/>
+      <Chat displayOfChat={displayOfChat} textOfFirstQuestion={inputMesage}/>
     </div>
   )
 }
-
 export default Index
