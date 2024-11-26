@@ -1,25 +1,29 @@
 import '../style/index.css'
 import { Chat } from './Chat.jsx'
 import { Search } from '../components/Search.jsx'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 
 function Index() {
   const displayOfInitialChat = useRef(null)
-  const inputUser = useRef(null)
-  const [displayOfChat, setDisplayOfChat] = useState('none')
-  const [inputMesage, setInputMessage] = useState('')
+  const [displayOfChat, setDisplayOfChat] = useState(false)
 
-  async function hideDisplayInitialChat(){
+  const inputInitialOfUser = useRef(null)
+  const [firstQuestion, setFirstQuestion] = useState('')
 
-    const valueInput = inputUser.current.value
-    if(valueInput){
-      await setInputMessage(valueInput)
+  useEffect(() => {
+    if(firstQuestion !== ''){
       displayOfInitialChat.current.style.display = 'none'
-      setDisplayOfChat('block')
-      console.log('sucess')
-    }else{
-      window.alert("Por favor, digite um prompt válido...")
-      console.log('error')
+      setDisplayOfChat(true)
+    } 
+  }, [firstQuestion])
+
+  function hideDisplayInitialChat(){
+
+    if(inputInitialOfUser.current.value === null || inputInitialOfUser.current.value === ''){
+      window.alert("Por favor, insira um prompt válido!")
+
+    }else {
+      setFirstQuestion(inputInitialOfUser.current.value)
     }
   }
 
@@ -30,9 +34,9 @@ function Index() {
             <img className='fotoAvatar' src='src/images/avatarRD.jpeg' alt='Not found'/>
             <h1 className='welcome-text'>Pronto para cuidar da saúde?</h1>
           </div> 
-          <Search reference={inputUser} placeholder={"O que gostaria de treinar?"} functionOfButton={hideDisplayInitialChat}/>
+          <Search reference={inputInitialOfUser} placeholder={"O que gostaria de treinar?"} functionOfButton={hideDisplayInitialChat}/>
         </div>
-      <Chat displayOfChat={displayOfChat} textOfFirstQuestion={inputMesage}/>
+      <Chat displayOfChat={displayOfChat} textOfFirstQuestion={firstQuestion}/>
     </div>
   )
 }

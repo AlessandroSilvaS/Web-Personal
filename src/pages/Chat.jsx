@@ -17,11 +17,12 @@ export function Chat({displayOfChat, textOfFirstQuestion}){
                 ...question,
                 {text: message, type: 'question'}
             ])
+            inputUserRef.current.value = ''
         }
     }
 
     return(
-        <div style={{display: displayOfChat}}>
+        <div style={{display: displayOfChat === true ? 'block' : 'none'}}>
             <div className="box-of-chat">
                 {cardChat.map((card) => {
                     return <CardChat textOfCard={card.text} typeCard={card.type} key={card.text}/>
