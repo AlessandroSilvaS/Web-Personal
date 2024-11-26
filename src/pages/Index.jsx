@@ -9,17 +9,17 @@ function Index() {
   const [displayOfChat, setDisplayOfChat] = useState('none')
   const [inputMesage, setInputMessage] = useState('')
 
-  function hideDisplayInitialChat(){
+  async function hideDisplayInitialChat(){
 
     const valueInput = inputUser.current.value
-
-    if(valueInput !== null){
+    if(valueInput){
+      await setInputMessage(valueInput)
       displayOfInitialChat.current.style.display = 'none'
       setDisplayOfChat('block')
-      setInputMessage(valueInput)
-      
+      console.log('sucess')
     }else{
       window.alert("Por favor, digite um prompt válido...")
+      console.log('error')
     }
   }
 
