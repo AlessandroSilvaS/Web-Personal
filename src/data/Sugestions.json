@@ -1,6 +1,17 @@
 [
     {
         "sugestion": "peito",
-        "Type": "red"
+        "color": "red"
+    },
+    {
+        "Sugestion": "Tríceps",
+        "color": "red"
+    },
+    {
+        "Sugestion": "Funcional",
+        "Color": "yellow"
+    },
+    {
+        "Sugestion": "Hipertrofia"
     }
 ]
