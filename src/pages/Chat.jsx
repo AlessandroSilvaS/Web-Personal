@@ -19,6 +19,12 @@ export function Chat({displayOfChat, textOfFirstQuestion}){
         }
     }
 
+    document.addEventListener('keydown', (e) => {
+        if(e.key === 'Enter'){
+          handleButtonClick()
+        }
+      })
+
     return(
         <div style={{display: displayOfChat === true ? 'block' : 'none'}}>
             <div className="box-of-chat">

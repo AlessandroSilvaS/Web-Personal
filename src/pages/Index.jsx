@@ -1,6 +1,7 @@
 import '../style/index.css'
 import { Chat } from './Chat.jsx'
 import { Search } from '../components/Search.jsx'
+import SugestionCards from '../components/SugestionCards.jsx'
 import { useRef, useState } from 'react'
 
 function Index() {
@@ -18,6 +19,13 @@ function Index() {
       setDisplayOfChat(true)
     }
   }
+
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter'){
+      inputMensage()
+    }
+  })
+
   return (
     <div className='box'>
       <div className="container-main" ref={displayOfInitialChat}>
@@ -26,6 +34,12 @@ function Index() {
           <h1 className='welcome-text'>Pronto para cuidar da saúde?</h1>
         </div> 
         <Search reference={inputInitialOfUser} placeholder={"O que gostaria de treinar?"} functionOfButton={inputMensage}/>
+        <div className="boxs-of-sugestions" style={{display: 'flex', justifyContent: 'space-evenly', gap: '20px', width: '50%', margin: '0 auto', marginTop: '15px'}}>
+          <SugestionCards sugestion={'Peito'} color={'red'}/>
+          <SugestionCards sugestion={'Peito'} color={'red'}/>
+          <SugestionCards sugestion={'Peito'} color={'red'}/>
+          <SugestionCards sugestion={'Peito'} color={'red'}/>
+        </div>
       </div>
       <Chat displayOfChat={displayOfChat} textOfFirstQuestion={firstQuestion}/>
     </div>
