@@ -5,9 +5,7 @@ import "../style/chat.css"
 export function Chat({displayOfChat, textOfFirstQuestion}){
     const inputUserRef = useRef(null)
 
-    const [cardChat, setCardChat] = useState([
-        {text: textOfFirstQuestion, type: 'question'}
-    ])
+        const [cardChat, setCardChat] = useState([])
 
     const handleButtonClick = () => {
         const message = inputUserRef.current.value;
@@ -24,6 +22,7 @@ export function Chat({displayOfChat, textOfFirstQuestion}){
     return(
         <div style={{display: displayOfChat === true ? 'block' : 'none'}}>
             <div className="box-of-chat">
+                <CardChat textOfCard={textOfFirstQuestion} typeCard={'question'}/>
                 {cardChat.map((card) => {
                     return <CardChat textOfCard={card.text} typeCard={card.type} key={card.text}/>
                 })}
