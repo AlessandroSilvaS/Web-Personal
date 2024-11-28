@@ -1,8 +1,8 @@
-const SugestionCards = ({sugestion, color}) => {
+const SugestionCards = ({sugestion, color, buttonFunction}) => {
     const sugestionStyle = {
         minWidth: '150px',
         minHeight: '70px',
-        border: `1px solid ${color}`,
+        border: `1px solid #000`,
         borderRadius: '20px',
         display: 'flex',
         justifyContent: 'center',
@@ -14,9 +14,8 @@ const SugestionCards = ({sugestion, color}) => {
 
     return(
         <>
-            <button style={sugestionStyle}>{sugestion}</button>
+            <button style={sugestionStyle} onClick={buttonFunction}>{sugestion}</button>
         </>
     )
 }
-
 export default SugestionCards

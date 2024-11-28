@@ -16,7 +16,6 @@ const CardChat = ({textOfCard, typeCard}) => {
     return(
         <div className="Box" style={cardStyle}>
             {textOfCard}
-            teste
         </div>
     )
 }

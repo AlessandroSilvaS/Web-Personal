@@ -1,0 +1,22 @@
+[
+    {
+        "Sugestion": "Peito",
+        "color": "red"
+    },
+    {
+        "Sugestion": "Tríceps",
+        "color": "red"
+    },
+    {
+        "Sugestion": "Funcional",
+        "color": "yellow"
+    },
+    {
+        "Sugestion": "Hipertrofia",
+        "color": "blue"
+    },
+    {
+        "Sugestion": "Panturrilha",
+        "color": "green"
+    }
+]

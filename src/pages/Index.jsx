@@ -3,6 +3,7 @@ import { Chat } from './Chat.jsx'
 import { Search } from '../components/Search.jsx'
 import SugestionCards from '../components/SugestionCards.jsx'
 import { useRef, useState } from 'react'
+import SugestionsData from '../data/SugestionsData.json'
 
 function Index() {
   const displayOfInitialChat = useRef(null)
@@ -20,11 +21,35 @@ function Index() {
     }
   }
 
+  function inputSugestionMensage(workout){
+    const promptWorkout = `Monte um treino para mim de ${workout}`
+    setFirstQuestion(promptWorkout)
+    displayOfInitialChat.current.style.display = 'none'
+    setDisplayOfChat(true)
+  }
+
   document.addEventListener('keydown', (e) => {
     if(e.key === 'Enter'){
       inputMensage()
     }
   })
+
+  const showSugestionsCards = () =>{
+    const sugestionsCardArray = []
+    const usedIndex = new Set()
+
+    while(sugestionsCardArray.length < 4) {
+      const indexNumber = Math.floor(Math.random() * SugestionsData.length)
+
+      if(!usedIndex.has(indexNumber)){
+
+        usedIndex.add(indexNumber)
+        sugestionsCardArray.push(<SugestionCards sugestion={SugestionsData[indexNumber].Sugestion} />)
+      }
+    }
+
+    return sugestionsCardArray
+  }
 
   return (
     <div className='box'>
@@ -35,10 +60,7 @@ function Index() {
         </div> 
         <Search reference={inputInitialOfUser} placeholder={"O que gostaria de treinar?"} functionOfButton={inputMensage}/>
         <div className="boxs-of-sugestions" style={{display: 'flex', justifyContent: 'space-evenly', gap: '20px', width: '50%', margin: '0 auto', marginTop: '15px'}}>
-          <SugestionCards sugestion={'Peito'} color={'red'}/>
-          <SugestionCards sugestion={'Peito'} color={'red'}/>
-          <SugestionCards sugestion={'Peito'} color={'red'}/>
-          <SugestionCards sugestion={'Peito'} color={'red'}/>
+          {showSugestionsCards()}
         </div>
       </div>
       <Chat displayOfChat={displayOfChat} textOfFirstQuestion={firstQuestion}/>
