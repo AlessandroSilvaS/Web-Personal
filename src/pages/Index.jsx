@@ -18,6 +18,8 @@ function Index() {
       setFirstQuestion(firstMensage)
       displayOfInitialChat.current.style.display = 'none'
       setDisplayOfChat(true)
+    }else{
+      window.alert('Por favor, insira um prompt válido!')
     }
   }
 
@@ -44,7 +46,7 @@ function Index() {
       if(!usedIndex.has(indexNumber)){
 
         usedIndex.add(indexNumber)
-        sugestionsCardArray.push(<SugestionCards sugestion={SugestionsData[indexNumber].Sugestion} />)
+        sugestionsCardArray.push(<SugestionCards sugestion={SugestionsData[indexNumber].Sugestion} buttonFunction={() => inputSugestionMensage(SugestionsData[indexNumber].Sugestion)}/>)
       }
     }
 
@@ -59,6 +61,7 @@ function Index() {
           <h1 className='welcome-text'>Pronto para cuidar da saúde?</h1>
         </div> 
         <Search reference={inputInitialOfUser} placeholder={"O que gostaria de treinar?"} functionOfButton={inputMensage}/>
+        <p style={{margin: '10px', color: '#a7a2a2'}}>Sugestões de treino.</p>
         <div className="boxs-of-sugestions" style={{display: 'flex', justifyContent: 'space-evenly', gap: '20px', width: '50%', margin: '0 auto', marginTop: '15px'}}>
           {showSugestionsCards()}
         </div>
@@ -67,5 +70,4 @@ function Index() {
     </div>
   )
 }
-
 export default Index

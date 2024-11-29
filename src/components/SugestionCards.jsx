@@ -9,6 +9,7 @@ const SugestionCards = ({sugestion, color, buttonFunction}) => {
         alignItems: 'center',
         fontSize: '28px',
         color: `${color}`,
+        backgroundColor: '#efeeee',
         cursor: 'pointer'
     }
 
