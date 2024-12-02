@@ -24,7 +24,7 @@ function Index() {
   }
 
   function inputSugestionMensage(workout){
-    const promptWorkout = `Monte um treino para mim de ${workout}`
+    const promptWorkout = `Create a workout for ${workout}`
     setFirstQuestion(promptWorkout)
     displayOfInitialChat.current.style.display = 'none'
     setDisplayOfChat(true)
@@ -58,10 +58,10 @@ function Index() {
       <div className="container-main" ref={displayOfInitialChat}>
         <div className='container-secundary'>
           <img className='fotoAvatar' src='src/images/avatarRD.jpeg' alt='Not found'/>
-          <h1 className='welcome-text'>Pronto para cuidar da saúde?</h1>
+          <h1 className='welcome-text'>Ready to take care of your health?</h1>
         </div> 
-        <Search reference={inputInitialOfUser} placeholder={"O que gostaria de treinar?"} functionOfButton={inputMensage}/>
-        <p style={{margin: '10px', color: '#a7a2a2'}}>Sugestões de treino.</p>
+        <Search reference={inputInitialOfUser} placeholder={"What would you like to train?"} functionOfButton={inputMensage}/>
+        <p style={{margin: '10px', color: '#a7a2a2'}}>Workout suggestions.</p>
         <div className="boxs-of-sugestions" style={{display: 'flex', justifyContent: 'space-evenly', gap: '20px', width: '50%', margin: '0 auto', marginTop: '15px'}}>
           {showSugestionsCards()}
         </div>

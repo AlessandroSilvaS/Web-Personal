@@ -1,22 +1,22 @@
 [
     {
-        "Sugestion": "Peito",
+        "Sugestion": "Chest",
         "color": "red"
     },
     {
-        "Sugestion": "Tríceps",
+        "Sugestion": "Triceps",
         "color": "red"
     },
     {
-        "Sugestion": "Funcional",
+        "Sugestion": "Functional",
         "color": "yellow"
     },
     {
-        "Sugestion": "Hipertrofia",
+        "Sugestion": "Hypertrophy",
         "color": "blue"
     },
     {
-        "Sugestion": "Panturrilha",
+        "Sugestion": "Calf",
         "color": "green"
     }
 ]
