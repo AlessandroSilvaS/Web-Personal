@@ -1,5 +1,5 @@
 .box-of-chat{
-    width: 50%;
+    width: 60%;
     height: 90vh;
     margin: 0 auto;
     margin-top: 20px;
@@ -7,10 +7,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    overflow-y: scroll;
-}
-.box-of-chat .teste{
-    text-align: right;
-    color: yellow;
-    font-size: 30px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
