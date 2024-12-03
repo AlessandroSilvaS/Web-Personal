@@ -1,24 +1,18 @@
 
 const CardChat = ({textOfCard, typeCard}) => {
 
-    const alingItems = (trueOption, falseOption) => {
-        if (typeCard === 'question'){
-            return trueOption
-        }else{
-            return falseOption
-        }
-    }
+    const alingItems = (trueOption, falseOption) => typeCard === 'question' ? trueOption : falseOption
 
     const cardStyle = {
-        backgroundColor: alingItems('rgb(238, 238, 238)', 'transparent'),
+        backgroundColor: alingItems('rgb(238, 238, 238)', 'trasparent'),
         padding: '15px',
         fontSize: '18px',
         borderRadius: '15px',
         maxWidth: '500px',
         minWidth: '100px',
-        minHeight: alingItems('20px', '1155px'),
+        minHeight: alingItems('20px', '400px'),
         maxHeight: '2000px',
-        marginBottom: "20px",
+        marginBottom: alingItems('20px', '0px'),
         alignSelf: alingItems('flex-end', 'flex-start'),
         display: 'flex',
         justifyContent: 'center',
